@@ -130,19 +130,6 @@ In JavaScript, dealing with the console primarily involves using the console obj
         ```javascript
         console.clear();
         ```
-
-`console.warn` is another method in JavaScript used to output warning messages to the browser's console. Here's a detailed comparison between `console.warn`, `console.log`, and `console.error`:
-
-### `console.warn`
-- **Purpose**: Used to output warning messages.
-- **Use Case**: For non-critical issues that should be brought to the attention of the developer, but do not necessarily stop the execution of the code. It is useful for potential issues or deprecated usage warnings.
-- **Behavior**: Outputs messages in a warning format, often with a yellow color to distinguish them from regular logs and errors.
-- **Example**:
-  ```javascript
-  console.warn('This is a warning message.');
-  console.warn('Deprecated API usage:', apiName);
-  ```
-
 ### Comparison of `console.log`, `console.warn`, and `console.error`
 1. **Intended Use**:
    - `console.log`: For general purpose logging.
@@ -452,4 +439,5 @@ In these examples, attempting to reassign `obj` or `arr` to a completely new obj
   - `const` cannot be reassigned or redeclared, but object properties and array elements can be modified.
 
 Using `let` and `const` is generally recommended over `var` to avoid issues with variable hoisting and scope. Use `const` for variables that should not be reassigned and `let` for variables that will be reassigned.
+
 
