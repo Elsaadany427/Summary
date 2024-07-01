@@ -243,38 +243,38 @@ const z = 15;
   - **Function Scope**
   Whenever you declare a variable in a function, the variable is visible only within the function. You can't access it outside the function. var is the keyword to define variable for a function-scope accessibility.
 
-  ```js
-  function foo(){
-        var fruit ='apple';
-        console.log('inside function: ',fruit);
-    }
+    ```js
+    function foo(){
+          var fruit ='apple';
+          console.log('inside function: ',fruit);
+      }
 
-    foo();                    //inside function: apple
-    console.log(fruit);       //error: fruit is not defined 
-  ```
+      foo();                    //inside function: apple
+      console.log(fruit);       //error: fruit is not defined 
+    ```
 
   - **Block Scope**
   A block scope is the area within if, switch conditions or for and while loops. Generally speaking, whenever you see {curly brackets}, it is a block.
 
- ```js
-  function foo(){
-    if(true){
-        var fruit1 = 'apple';        //exist in function scope
-        const fruit2 = 'banana';     //exist in block scope
-        let fruit3 = 'strawberry';   //exist in block scope
+    ```js
+      function foo(){
+        if(true){
+            var fruit1 = 'apple';        //exist in function scope
+            const fruit2 = 'banana';     //exist in block scope
+            let fruit3 = 'strawberry';   //exist in block scope
 
+        }
+        console.log(fruit1);
+        console.log(fruit2);
+        console.log(fruit3);
     }
-    console.log(fruit1);
-    console.log(fruit2);
-    console.log(fruit3);
-}
 
-foo();
-//result:
-//apple
-//error: fruit2 is not defined
-//error: fruit3 is not defined
-```
+    foo();
+    //result:
+    //apple
+    //error: fruit2 is not defined
+    //error: fruit3 is not defined
+    ```
 
 In JavaScript, `var`, `let`, and `const` are used to declare variables, but they have different properties and behaviors. Here's a detailed comparison with examples:
 
