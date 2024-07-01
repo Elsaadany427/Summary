@@ -147,7 +147,7 @@ In JavaScript, dealing with the console primarily involves using the console obj
    - `console.error`: Displays errors with a distinct color and usually includes stack traces or links to the source code causing the error.
 
 
-JavaScript syntax refers to the set of rules that define the structure and composition of valid JavaScript code. Here are the key elements of JavaScript syntax:
+### JavaScript syntax refers to the set of rules that define the structure and composition of valid JavaScript code. Here are the key elements of JavaScript syntax:
 ## Syntax
 
 ### 1. Data Types
@@ -184,14 +184,14 @@ let undefinedVariable;
 
 - **Difference between null and undefiend:**
 
-- undefined means a variable has been declared but has not yet been assigned a value.
-- null is an assignment value, representing intentional absence of any object value.
-- When comparing them:
-  - null == undefined evaluates to true.
-  - null === undefined evaluates to false.
-- Syntax:
-  - undefined does not have any explicit syntax; it simply arises from uninitialized variables or missing properties.
-  - null is explicitly assigned using the keyword null.
+  - undefined means a variable has been declared but has not yet been assigned a value.
+  - null is an assignment value, representing intentional absence of any object value.
+  - When comparing them:
+    - null == undefined evaluates to true.
+    - null === undefined evaluates to false.
+  - Syntax:
+    - undefined does not have any explicit syntax; it simply arises from uninitialized variables or missing properties.
+    - null is explicitly assigned using the keyword null.
 
 ### 2. Variables
 Variables store data values. You can declare variables using `var`, `let`, or `const`.
