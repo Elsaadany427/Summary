@@ -641,12 +641,12 @@ let logicalOr = (true || false);
 ```
 
 
-Unary operators in JavaScript are operators that operate on a single operand. Here are examples of the unary operators `typeof`, `void`, and `delete`.
+#### Unary operators in JavaScript are operators that operate on a single operand. Here are examples of the unary operators `typeof`, `void`, and `delete`.
 
-### `typeof` Operator
+#### `typeof` Operator
 The `typeof` operator returns a string indicating the type of the unevaluated operand.
 
-#### Examples:
+##### Examples:
 ```javascript
 // Number
 let num = 42;
@@ -679,10 +679,10 @@ let bigIntNum = 1234567890123456789012345678901234567890n;
 console.log(typeof bigIntNum); // Output: "bigint"
 ```
 
-### `void` Operator
+#### `void` Operator
 The `void` operator evaluates an expression and returns `undefined`. It is often used to suppress any return value of an expression.
 
-#### Examples:
+##### Examples:
 ```javascript
 // Using void to ignore the result of an expression
 let result = void (2 + 2);
@@ -704,10 +704,10 @@ void function() {
 }();
 ```
 
-### `delete` Operator
+#### `delete` Operator
 The `delete` operator removes a property from an object.
 
-#### Examples:
+##### Examples:
 ```javascript
 let person = {
   name: "John",
