@@ -1213,6 +1213,98 @@ newDiv.textContent = "This is a new div element.";
 document.body.appendChild(newDiv);
 ```
 
+note diff between textContent and innerHTML
+
+If you set the `textContent` property to `'<p>New <strong>HTML</strong> Content</p>'`, the entire string, including the HTML tags, will be treated as plain text and displayed exactly as it is. The HTML tags will not be parsed or rendered as HTML elements; they will simply be shown as part of the text.
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>textContent Example</title>
+</head>
+<body>
+    <div id="exampleDiv">
+        <p>Hello <span>World</span>!</p>
+    </div>
+
+    <script>
+        let exampleDiv = document.getElementById('exampleDiv');
+
+        // Set text content with HTML tags
+        exampleDiv.textContent = '<p>New <strong>HTML</strong> Content</p>';
+        
+        // Outputs the content of the div element
+        console.log(exampleDiv.textContent); // Outputs: "<p>New <strong>HTML</strong> Content</p>"
+    </script>
+</body>
+</html>
+```
+
+### Result
+
+In the browser, the content of the `div` with ID `exampleDiv` will be:
+
+```
+<p>New <strong>HTML</strong> Content</p>
+```
+
+Instead of rendering "New **HTML** Content" with the `<strong>` tag making "HTML" bold, it will show the literal text `'<p>New <strong>HTML</strong> Content</p>'`.
+
+### Visual Output
+
+The browser will display the following text within the `div`:
+
+```
+<p>New <strong>HTML</strong> Content</p>
+```
+
+The tags `<p>`, `<strong>`, and `</strong>` will be shown as part of the text, not as HTML elements.
+
+### Comparison with `innerHTML`
+
+If you want the string to be parsed and rendered as HTML, you should use `innerHTML` instead.
+
+#### Example with `innerHTML`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML Example</title>
+</head>
+<body>
+    <div id="exampleDiv">
+        <p>Hello <span>World</span>!</p>
+    </div>
+
+    <script>
+        let exampleDiv = document.getElementById('exampleDiv');
+
+        // Set inner HTML with HTML tags
+        exampleDiv.innerHTML = '<p>New <strong>HTML</strong> Content</p>';
+        
+        // Outputs the content of the div element
+        console.log(exampleDiv.innerHTML); // Outputs: "<p>New <strong>HTML</strong> Content</p>"
+    </script>
+</body>
+</html>
+```
+
+### Result with `innerHTML`
+
+In the browser, the content of the `div` with ID `exampleDiv` will be rendered as:
+
+```
+New HTML Content
+```
+
+
+
 ### Adding Elements to the DOM
 
 Once you have created an element, you can add it to the DOM using various methods:
@@ -2084,4 +2176,242 @@ Here's how the complete JavaScript code looks when integrated into the HTML:
 - **Keyboard Events**: The `keydown` and `keyup` events are handled for the text input element (`textInput`). They log the pressed/released key to the console.
   
 - **Focus & Blur Events**: The `focus` and `blur` events are also handled for the text input. They log messages when the input gains or loses focus.
+
+
+## 5. Front-end form validation
+Front-end form validation is the process of ensuring that user input in a web form is complete, accurate, and conforms to expected formats before it is submitted to the server.
+
+### HTML5 Built-in Validation
+
+HTML5 provides several built-in form validation features that can be utilized with minimal JavaScript:
+
+- **Required Fields**: Use the `required` attribute to ensure a field is not left empty.
+- **Input Types**: Use specific input types like `email`, `number`, `url`, etc., which have built-in validation for format.
+- **Pattern Matching**: Use the `pattern` attribute with regular expressions to enforce custom formats.
+- **Min and Max Attributes**: Define minimum and maximum values for numeric and date inputs.
+
+#### Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation Example</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        .valid {
+            border-color: green;
+        }
+        .invalid {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <span class="error" id="usernameError">Username is required.</span>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError">Please enter a valid email address.</span>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" pattern=".{8,}" required>
+        <span class="error" id="passwordError">Password must be at least 8 characters long.</span>
+        <br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        // JavaScript code for custom validation will go here
+    </script>
+</body>
+</html>
+```
+### JavaScript Custom Validation
+
+To provide more complex validation logic, you can use JavaScript. This allows you to create custom validation rules, provide immediate feedback, and handle the validation state dynamically.
+
+#### JavaScript Validation Logic
+
+```javascript
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('registrationForm');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission for validation
+        let isValid = true;
+
+        // Username validation
+        if (username.value.trim() === '') {
+            isValid = false;
+            showError(username, 'usernameError');
+        } else {
+            showValid(username, 'usernameError');
+        }
+
+        // Email validation
+        if (!validateEmail(email.value)) {
+            isValid = false;
+            showError(email, 'emailError');
+        } else {
+            showValid(email, 'emailError');
+        }
+
+        // Password validation
+        if (password.value.length < 8) {
+            isValid = false;
+            showError(password, 'passwordError');
+        } else {
+            showValid(password, 'passwordError');
+        }
+
+        if (isValid) {
+            form.submit(); // Submit form if all fields are valid
+        }
+    });
+
+    function showError(element, errorId) {
+        element.classList.add('invalid');
+        element.classList.remove('valid');
+        document.getElementById(errorId).style.display = 'inline';
+    }
+
+    function showValid(element, errorId) {
+        element.classList.add('valid');
+        element.classList.remove('invalid');
+        document.getElementById(errorId).style.display = 'none';
+    }
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+});
+```
+
+### Explanation:
+
+- **Event Listener**: The `DOMContentLoaded` event ensures that the JavaScript runs only after the DOM is fully loaded.
+- **Form Submission Prevention**: The `submit` event listener prevents the default form submission to perform validation.
+- **Validation Functions**: Custom functions (`showError`, `showValid`, and `validateEmail`) manage validation logic and feedback display.
+- **Regular Expressions**: Used for email validation to ensure the format is correct.
+
+### CSS for Validation
+
+Use CSS to style the form elements based on their validation state:
+
+```css
+.error {
+    color: red;
+    display: none;
+}
+
+.valid {
+    border-color: green;
+}
+
+.invalid {
+    border-color: red;
+}
+```
+## 6. Local storage
+Local storage in web development refers to several different methods for storing data locally within the user's browser. These include:
+
+1. **Cookies**
+2. **Local Storage**
+3. **Session Storage**
+
+### 1. Cookies
+
+Cookies are small pieces of data that websites can store on a user's browser. They are commonly used for session management, user tracking, and storing user preferences.
+
+- **Storage Size**: Around 4KB per cookie.
+- **Persistence**: Can be set to expire at a specific time or when the browser is closed.
+- **Scope**: Sent to the server with every HTTP request to the domain.
+- **Security**: Can be made secure and HTTP-only to mitigate certain attacks.
+
+#### Example:
+
+```javascript
+// Setting a cookie
+document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2021 23:59:59 GMT; path=/";
+
+// Getting cookies
+console.log(document.cookie);
+
+// Deleting a cookie
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+```
+
+### 2. Local Storage
+
+Local Storage allows you to store key-value pairs in a web browser. It is part of the Web Storage API and provides a way to store data persistently within the user's browser.
+
+- **Storage Size**: 5-10MB per domain.
+- **Persistence**: Data persists until explicitly deleted.
+- **Scope**: Available to all pages on the same domain.
+- **Security**: Data is accessible through JavaScript on the same domain.
+
+#### Example:
+
+```javascript
+// Storing data
+localStorage.setItem('username', 'JohnDoe');
+
+// Retrieving data
+let username = localStorage.getItem('username');
+console.log(username); // Outputs: JohnDoe
+
+// Deleting data
+localStorage.removeItem('username');
+
+// Clearing all data
+localStorage.clear();
+```
+
+### 3. Session Storage
+
+Session Storage is similar to Local Storage but the data is only available for the duration of the page session. Once the browser tab is closed, the data is cleared.
+
+- **Storage Size**: 5-10MB per domain.
+- **Persistence**: Data is cleared when the tab is closed.
+- **Scope**: Available to the current tab only.
+- **Security**: Data is accessible through JavaScript on the same domain.
+
+#### Example:
+
+```javascript
+// Storing data
+sessionStorage.setItem('username', 'JohnDoe');
+
+// Retrieving data
+let username = sessionStorage.getItem('username');
+console.log(username); // Outputs: JohnDoe
+
+// Deleting data
+sessionStorage.removeItem('username');
+
+// Clearing all data
+sessionStorage.clear();
+```
+
+### Use Cases
+
+- **Cookies**: Session management, user authentication, tracking, storing small amounts of data that need to be sent to the server.
+- **Local Storage**: Saving user preferences, themes, form data, small-scale application data.
+- **Session Storage**: Temporary data storage for a single session or tab, form data recovery.
+- **IndexedDB**: Large-scale data storage, offline applications, complex data storage requirements.
 
