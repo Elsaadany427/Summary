@@ -939,3 +939,1149 @@ Certainly! Here's an overview of different types of functions in JavaScript:
   2. **Array-like Behavior**: Once collected, rest parameters can be treated like regular arrays. You can iterate over them.
 
   3. **No Fixed Length**: Unlike traditional parameters, rest parameters can handle any number of arguments—including none at all (as shown in `sum()`).
+
+# Introduction to DOM
+The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, making it possible to manipulate the content, structure, and style of web pages programmatically. 
+## 1. Selecting Element by JS
+The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, making it possible to manipulate the content, structure, and style of web pages programmatically. One of the common tasks when working with the DOM is selecting elements.
+
+## Selecting Elements by JavaScript
+
+JavaScript provides several methods to select elements in the DOM. Here are the most commonly used ones:
+
+### 1. `getElementById`
+
+This method selects an element by its `id` attribute.
+
+```javascript
+let element = document.getElementById("myId");
+```
+
+### 2. `getElementsByClassName`
+
+This method selects all elements with a specified class name. It returns an HTMLCollection, which is a live collection of DOM elements.
+
+```javascript
+let elements = document.getElementsByClassName("myClass");
+```
+
+### 3. `getElementsByTagName`
+
+This method selects all elements with a specified tag name. It also returns an HTMLCollection.
+
+```javascript
+let elements = document.getElementsByTagName("div");
+```
+
+### 4. `querySelector`
+
+This method returns the first element that matches a specified CSS selector.
+
+```javascript
+let element = document.querySelector(".myClass");
+```
+
+### 5. `querySelectorAll`
+
+This method returns all elements that match a specified CSS selector. It returns a NodeList, which is a static collection of DOM elements.
+
+```javascript
+let elements = document.querySelectorAll(".myClass");
+```
+
+## Examples
+
+### Example 1: Selecting an Element by ID
+
+HTML:
+```html
+<div id="myId">Hello World</div>
+```
+
+JavaScript:
+```javascript
+let element = document.getElementById("myId");
+console.log(element.textContent); // Outputs: Hello World
+```
+
+### Example 2: Selecting Elements by Class Name
+
+HTML:
+```html
+<div class="myClass">Hello</div>
+<div class="myClass">World</div>
+```
+
+JavaScript:
+```javascript
+let elements = document.getElementsByClassName("myClass");
+for (let element of elements) {
+    console.log(element.textContent); // Outputs: Hello, World
+}
+```
+
+### Example 3: Selecting Elements by Tag Name
+
+HTML:
+```html
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+```
+
+JavaScript:
+```javascript
+let elements = document.getElementsByTagName("p");
+for (let element of elements) {
+    console.log(element.textContent); // Outputs: Paragraph 1, Paragraph 2
+}
+```
+
+### Example 4: Using `querySelector`
+
+HTML:
+```html
+<div class="myClass">Hello</div>
+<div class="myClass">World</div>
+```
+
+JavaScript:
+```javascript
+let element = document.querySelector(".myClass");
+console.log(element.textContent); // Outputs: Hello
+```
+
+### Example 5: Using `querySelectorAll`
+
+HTML:
+```html
+<div class="myClass">Hello</div>
+<div class="myClass">World</div>
+```
+
+JavaScript:
+```javascript
+let elements = document.querySelectorAll(".myClass");
+elements.forEach(element => {
+    console.log(element.textContent); // Outputs: Hello, World
+});
+```
+
+These methods provide flexibility and power when working with the DOM, allowing you to easily select and manipulate elements on your web pages.
+
+### Detailed Differences Between `HTMLCollection` and `NodeList`
+
+1. **Content Types**:
+   - **HTMLCollection**: Contains only element nodes.
+   - **NodeList**: Can contain any type of node, including element nodes, text nodes, and comment nodes.
+
+2. **Access Methods**:
+   - **HTMLCollection**: Items can be accessed by their index, name, or id.
+   - **NodeList**: Items can only be accessed by their index.
+
+3. **Live vs. Static**:
+   - **HTMLCollection**: Always live, meaning it updates automatically when the document changes.
+   - **NodeList**: Can be either live (e.g., `childNodes`) or static (e.g., `querySelectorAll`).
+
+4. **Iteration**:
+   - **HTMLCollection**: Can be iterated using a `for` loop or `for...of` loop, but does not support `forEach` directly.
+   - **NodeList**: Supports `forEach`, and can be iterated using a `for` loop or `for...of` loop.
+
+5. **Use Cases**:
+   - **HTMLCollection**: Best used when you need a live list of element nodes (e.g., all elements with a specific class).
+   - **NodeList**: Useful when you need a list of mixed node types or when working with a snapshot of nodes.
+
+### Example with `HTMLCollection` and `NodeList`
+
+Let's use the following HTML structure for the example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMLCollection and NodeList Example</title>
+</head>
+<body>
+    <div class="myClass" id="firstDiv">Hello <span>World</span></div>
+    <div class="myClass" id="secondDiv">Another Div</div>
+    <script>
+        // HTMLCollection example
+        let htmlCollection = document.getElementsByClassName("myClass");
+
+        // Access by index
+        console.log("HTMLCollection[0]:", htmlCollection[0]);
+        console.log("HTMLCollection[1]:", htmlCollection[1]);
+
+        // Access by id (if it exists)
+        console.log("HTMLCollection['firstDiv']:", htmlCollection['firstDiv']);
+        console.log("HTMLCollection['secondDiv']:", htmlCollection['secondDiv']);
+
+        // Iterate using for...of loop
+        console.log("Iterating HTMLCollection:");
+        for (let element of htmlCollection) {
+            console.log(element);
+        }
+
+        // NodeList example with querySelectorAll
+        let nodeList1 = document.querySelectorAll(".myClass");
+        console.log("NodeList from querySelectorAll:");
+        nodeList1.forEach(node => console.log(node));
+
+        // NodeList example with childNodes
+        let nodeList2 = document.getElementById("firstDiv").childNodes;
+        console.log("NodeList from childNodes:");
+        nodeList2.forEach(node => console.log(node));
+    </script>
+</body>
+</html>
+```
+
+### Explanation and Output
+
+#### HTMLCollection
+
+1. **Access by Index**:
+   - `htmlCollection[0]`: Outputs `<div class="myClass" id="firstDiv">Hello <span>World</span></div>`
+   - `htmlCollection[1]`: Outputs `<div class="myClass" id="secondDiv">Another Div</div>`
+
+2. **Access by ID** (if ID is available):
+   - `htmlCollection["firstDiv"]`: Outputs `<div class="myClass" id="firstDiv">Hello <span>World</span></div>`
+   - `htmlCollection["secondDiv"]`: Outputs `<div class="myClass" id="secondDiv">Another Div</div>`
+
+3. **Iteration using `for...of` loop**:
+   ```javascript
+   Iterating HTMLCollection:
+   <div class="myClass" id="firstDiv">Hello <span>World</span></div>
+   <div class="myClass" id="secondDiv">Another Div</div>
+   ```
+
+#### NodeList
+
+1. **Using `querySelectorAll`**:
+   - `document.querySelectorAll(".myClass")` returns a static `NodeList` of all elements with the class `myClass`.
+   - **Output**:
+     ```javascript
+     NodeList from querySelectorAll:
+     <div class="myClass" id="firstDiv">Hello <span>World</span></div>
+     <div class="myClass" id="secondDiv">Another Div</div>
+     ```
+
+2. **Using `childNodes`**:
+   - `document.getElementById("firstDiv").childNodes` returns a live `NodeList` of all child nodes (including text nodes) of the first `div`.
+   - **Output**:
+     ```javascript
+     NodeList from childNodes:
+     #text "Hello "       // Text node representing the text "Hello "
+     <span>World</span>   // Element node representing the <span>World</span> element
+     ```
+
+### Summary of Differences with Example Context
+
+1. **Content Types**:
+   - **HTMLCollection**: Contains only the `<div class="myClass">...</div>` elements.
+   - **NodeList (querySelectorAll)**: Contains the same `<div class="myClass">...</div>` elements.
+   - **NodeList (childNodes)**: Contains mixed nodes, including text nodes (`"Hello "`) and element nodes (`<span>World</span>`).
+
+2. **Access Methods**:
+   - **HTMLCollection**: Access elements by index, name, or id.
+   - **NodeList**: Access nodes by index.
+
+3. **Live vs. Static**:
+   - **HTMLCollection**: Automatically updates if new elements with class `myClass` are added.
+   - **NodeList (querySelectorAll)**: Static, does not update with changes to the DOM.
+   - **NodeList (childNodes)**: Live, automatically updates with changes to the child nodes of `firstDiv`.
+
+
+## 2. Create and Add Element in DOM
+Creating and adding elements to the DOM dynamically is a common task in web development, often used to update the interface or respond to user actions. There are several methods and best practices for accomplishing this:
+
+### Creating Elements
+
+You can create new elements in the DOM using the `document.createElement()` method. This method takes the tag name of the element you want to create as an argument.
+
+#### Example:
+
+```javascript
+// Create a new <div> element
+let newDiv = document.createElement("div");
+
+// Set attributes or properties if needed
+newDiv.className = "myClass";
+newDiv.textContent = "This is a new div element.";
+
+// Append the new element to an existing element
+document.body.appendChild(newDiv);
+```
+
+### Adding Elements to the DOM
+
+Once you have created an element, you can add it to the DOM using various methods:
+
+1. **appendChild**: Adds a node as the last child of a specified parent node.
+   
+   ```javascript
+   let parentElement = document.getElementById("parentElementId");
+   parentElement.appendChild(newDiv);
+   ```
+
+2. **insertBefore**: Inserts a node before a specified child node in the parent node.
+
+   ```javascript
+   let referenceNode = document.getElementById("referenceNodeId");
+   parentElement.insertBefore(newDiv, referenceNode);
+   ```
+
+3. **insertAdjacentHTML**: Inserts HTML into a specified position relative to the element.
+
+   ```javascript
+   parentElement.insertAdjacentHTML("beforeend", "<div>Inserted HTML</div>");
+   ```
+
+### Complete Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create and Add Element in DOM</title>
+    <style>
+        .myClass {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Click the button to add a new div element</h2>
+    <button onclick="addNewDiv()">Add New Div</button>
+
+    <script>
+        function addNewDiv() {
+            // Create a new <div> element
+            let newDiv = document.createElement("div");
+
+            // Set attributes or properties
+            newDiv.className = "myClass";
+            newDiv.textContent = "This is a new div element.";
+
+            // Append the new element to the body
+            document.body.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
+```
+
+### Explanation
+
+- **Creating an Element**: `document.createElement("div")` creates a new `<div>` element.
+- **Setting Attributes/Properties**: You can set properties such as `className` (for classes), `textContent`, or any other attribute like `id` or `style`.
+- **Appending to the DOM**: `appendChild()` is used here to add the newly created `<div>` as a child of the `<body>` element when the button is clicked.
+
+### different between append and appendchild
+The terms "append" and "appendChild" are closely related in the context of DOM manipulation, but they refer to slightly different concepts and methods.
+
+### append()
+
+The `append()` method is used to insert one or more nodes or DOMString objects at the end of the children of a specified parent node. It can take multiple arguments and appends each of them in order.
+
+#### Syntax:
+
+```javascript
+parentElement.append(node1, node2, ..., nodeN);
+parentElement.append(domString1, domString2, ..., domStringN);
+```
+
+- **Parameters**:
+  - `node1, node2, ..., nodeN`: Nodes to be appended.
+  - `domString1, domString2, ..., domStringN`: DOMString objects to be appended as text nodes.
+
+- **Return value**: `undefined`.
+
+#### Example:
+
+```javascript
+let parentElement = document.getElementById('parentElementId');
+
+// Create new elements
+let newDiv = document.createElement('div');
+let newSpan = document.createElement('span');
+
+// Append elements to parentElement using append()
+parentElement.append(newDiv, newSpan);
+
+// Append text as DOMString
+parentElement.append('Hello ', 'World');
+```
+
+In this example:
+- `newDiv` and `newSpan` are appended as child nodes to `parentElement`.
+- `'Hello '` and `'World'` are appended as text nodes to `parentElement`.
+
+### appendChild()
+
+The `appendChild()` method is used to append a node as the last child of a specified parent node. Unlike `append()`, it takes only one argument — the node to be appended.
+
+#### Syntax:
+
+```javascript
+parentElement.appendChild(node);
+```
+
+- **Parameter**:
+  - `node`: The node to be appended.
+
+- **Return value**: The appended node.
+
+#### Example:
+
+```javascript
+let parentElement = document.getElementById('parentElementId');
+
+// Create a new element
+let newDiv = document.createElement('div');
+
+// Append newDiv as a child node to parentElement using appendChild()
+parentElement.appendChild(newDiv);
+```
+
+In this example:
+- `newDiv` is appended as the last child node of `parentElement`.
+
+### Key Differences
+
+- **Number of Arguments**: `append()` can accept multiple nodes and DOMString objects to append, whereas `appendChild()` accepts only one node.
+  
+- **Return Value**: `append()` returns `undefined`, while `appendChild()` returns the appended node itself.
+  
+- **Positioning**: `append()` appends nodes or strings at the end of the parent's children, maintaining the order specified in its arguments. `appendChild()` always appends as the last child node of the parent.
+
+### When to Use Each
+
+- **append()**: Use `append()` when you need to append multiple nodes or strings in one go and want to control their order of insertion.
+  
+- **appendChild()**: Use `appendChild()` when you are appending a single node and want to ensure it is added as the last child of the parent node.
+
+### What about insertAdjacentHTML
+
+Certainly! Here's the complete visual result after clicking each button sequentially:
+
+### Initial HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertAdjacentHTML Examples</title>
+    <style>
+        .myClass {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="myClass">
+        Initial content
+    </div>
+    <button onclick="insertBeforeBegin()">Insert Before Begin</button>
+    <button onclick="insertAfterBegin()">Insert After Begin</button>
+    <button onclick="insertBeforeEnd()">Insert Before End</button>
+    <button onclick="insertAfterEnd()">Insert After End</button>
+
+    <script>
+        function insertBeforeBegin() {
+            let container = document.getElementById('container');
+            let htmlContent = '<div class="inserted-content">Inserted HTML</div>';
+            container.insertAdjacentHTML('beforebegin', htmlContent);
+        }
+
+        function insertAfterBegin() {
+            let container = document.getElementById('container');
+            let htmlContent = '<div class="inserted-content">Inserted HTML</div>';
+            container.insertAdjacentHTML('afterbegin', htmlContent);
+        }
+
+        function insertBeforeEnd() {
+            let container = document.getElementById('container');
+            let htmlContent = '<div class="inserted-content">Inserted HTML</div>';
+            container.insertAdjacentHTML('beforeend', htmlContent);
+        }
+
+        function insertAfterEnd() {
+            let container = document.getElementById('container');
+            let htmlContent = '<div class="inserted-content">Inserted HTML</div>';
+            container.insertAdjacentHTML('afterend', htmlContent);
+        }
+    </script>
+</body>
+</html>
+```
+
+### Visual Result after Each Button Click
+
+#### 1. After Clicking "Insert Before Begin"
+
+```html
+<div class="inserted-content">Inserted HTML</div>
+<div id="container" class="myClass">
+    Initial content
+</div>
+```
+
+- **Explanation**: `<div class="inserted-content">Inserted HTML</div>` is inserted immediately before `<div id="container" class="myClass">`.
+
+#### 2. After Clicking "Insert After Begin"
+
+```html
+<div class="inserted-content">Inserted HTML</div>
+<div id="container" class="myClass">
+    <div class="inserted-content">Inserted HTML</div>
+    Initial content
+</div>
+```
+
+- **Explanation**: `<div class="inserted-content">Inserted HTML</div>` is inserted at the beginning of the content inside `<div id="container" class="myClass">`.
+
+#### 3. After Clicking "Insert Before End"
+
+```html
+<div id="container" class="myClass">
+    <div class="inserted-content">Inserted HTML</div>
+    Initial content
+    <div class="inserted-content">Inserted HTML</div>
+</div>
+```
+
+- **Explanation**: `<div class="inserted-content">Inserted HTML</div>` is appended at the end of the content inside `<div id="container" class="myClass">`.
+
+#### 4. After Clicking "Insert After End"
+
+```html
+<div id="container" class="myClass">
+    <div class="inserted-content">Inserted HTML</div>
+    Initial content
+</div>
+<div class="inserted-content">Inserted HTML</div>
+```
+
+- **Explanation**: `<div class="inserted-content">Inserted HTML</div>` is inserted immediately after `<div id="container" class="myClass">`.
+
+## 3. How to add in CSS in JS
+To add CSS styles dynamically in JavaScript, you have a few different approaches depending on your requirements and preferences. Here are the common methods:
+
+### 1. Inline Styles
+
+You can directly manipulate the `style` attribute of an element to apply CSS styles. This method is straightforward but can become cumbersome for complex styles.
+
+#### Example:
+
+```javascript
+// Select an element
+let element = document.getElementById('myElement');
+
+// Apply inline styles
+element.style.backgroundColor = 'lightblue';
+element.style.padding = '10px';
+element.style.margin = '5px';
+```
+
+### 2. Using `setAttribute()`
+
+You can set the `style` attribute of an element using `setAttribute()`, which allows you to apply multiple styles at once as a string.
+
+#### Example:
+
+```javascript
+// Select an element
+let element = document.getElementById('myElement');
+
+// Apply styles using setAttribute
+element.setAttribute('style', 'background-color: lightblue; padding: 10px; margin: 5px;');
+```
+
+### 3. Adding a CSS Class
+
+Define your styles in a CSS class and add/remove the class dynamically to apply or remove styles from elements.
+
+#### Example:
+
+CSS:
+
+```css
+.myStyle {
+    background-color: lightblue;
+    padding: 10px;
+    margin: 5px;
+}
+```
+
+JavaScript:
+
+```javascript
+// Select an element
+let element = document.getElementById('myElement');
+
+// Add a CSS class to apply styles
+element.classList.add('myStyle');
+```
+
+### 4. Creating and Injecting `<style>` Elements
+
+For more complex or dynamic styles, you can create `<style>` elements dynamically and insert them into the `<head>` of your document.
+
+#### Example:
+
+```javascript
+// Create a <style> element
+let styleElement = document.createElement('style');
+
+// Define CSS rules
+let cssCode = `
+    .myStyle {
+        background-color: lightblue;
+        padding: 10px;
+        margin: 5px;
+    }
+`;
+
+// Add CSS rules to <style> element
+styleElement.appendChild(document.createTextNode(cssCode));
+
+// Append <style> element to <head>
+document.head.appendChild(styleElement);
+```
+
+## 4. Introduction to Events in JS (Event Listener)
+
+Event handling in web development refers to the process of writing code that responds to events triggered by user interactions or actions in the browser. Events can be various actions such as clicks, key presses, mouse movements, form submissions, and more. Here’s a detailed explanation covering all aspects of event handling in JavaScript:
+
+### Basics of Event Handling
+
+1. **Event**: An event is an action or occurrence that happens in the browser that your JavaScript code can respond to. Examples include clicking a button, pressing a key, submitting a form, etc.
+
+2. **Event Listener**: An event listener is a function that waits for a specific event to occur and then triggers an action based on that event. Event listeners are attached to DOM elements and listen for specific events to happen to those elements.
+
+3. **Event Handler**: An event handler is a function that runs in response to an event being triggered. It contains the logic or actions that should be performed when the event occurs.
+
+### Event Types
+
+Events can be categorized into different types based on their source or nature:
+
+- **Mouse Events**: Triggered by mouse interactions like clicks, movements, scrolling, etc. Examples: `click`, `mouseover`, `mouseout`.
+  
+- **Keyboard Events**: Fired by keyboard interactions such as key presses and releases. Examples: `keydown`, `keyup`.
+  
+- **Form Events**: Related to form interactions like submitting a form or changing form elements. Examples: `submit`, `change`.
+  
+- **Focus Events**: Invoked when an element gains or loses focus. Examples: `focus`, `blur`.
+  
+- **Window Events**: Events related to the browser window, such as loading of the page, resizing the window, etc. Examples: `load`, `resize`.
+
+### Event Listener Syntax
+
+You can attach event listeners to DOM elements using the `addEventListener()` method. This method takes two parameters: the type of event to listen for, and a function (event handler) to call when the event occurs.
+
+```javascript
+element.addEventListener('click', function(event) {
+    // Event handling logic goes here
+});
+```
+
+### Event Handling Function
+
+The event handling function (event handler) receives an `event` object as an argument. This object contains details about the event, such as which element triggered the event, the type of event, and any additional data related to the event.
+
+```javascript
+element.addEventListener('click', function(event) {
+    console.log('Element clicked:', event.target);
+});
+```
+
+### Preventing Default Behavior
+
+Some events have default behaviors associated with them (e.g., clicking a link navigates to a new page). You can prevent this default behavior using the `preventDefault()` method on the event object.
+
+```javascript
+// Prevent default form submission
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Custom form submission logic
+});
+```
+
+### Event Bubbling and Capturing
+
+- **Event Bubbling**: By default, when an event occurs on an element, it bubbles up through its parent elements, triggering their event handlers if they have any. This is called event bubbling.
+  
+- **Event Capturing**: Event capturing is the opposite of bubbling. It involves the event starting at the top of the DOM tree and propagating down to the target element.
+  #### Example in more details
+  Event bubbling and capturing are two mechanisms used in event propagation within the DOM. Understanding these mechanisms is crucial for managing event handling, especially when dealing with nested elements or elements that share common ancestors. Here’s a detailed example that illustrates both event bubbling and capturing:
+
+  ### HTML Structure
+
+  Let's create a nested structure of HTML elements to demonstrate event propagation:
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Event Bubbling and Capturing Example</title>
+      <style>
+          .container {
+              padding: 20px;
+              border: 1px solid #ccc;
+          }
+          .box {
+              padding: 10px;
+              margin: 10px;
+              border: 1px solid black;
+          }
+          .inner-box {
+              padding: 10px;
+              margin: 10px;
+              border: 1px solid blue;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container" id="container">
+          <div class="box" id="outerBox">
+              Outer Box
+              <div class="inner-box" id="innerBox">
+                  Inner Box
+              </div>
+          </div>
+      </div>
+
+      <script>
+          // JavaScript code for event handling will go here
+      </script>
+  </body>
+  </html>
+  ```
+
+  ### JavaScript Event Handling
+
+  Now, let's add JavaScript code to attach event listeners to the nested elements and observe event propagation:
+
+  #### Event Bubbling Example
+
+  ```javascript
+  // Select the outer box element
+  let outerBox = document.getElementById('outerBox');
+
+  // Add a click event listener to the outer box
+  outerBox.addEventListener('click', function(event) {
+      console.log('Outer box clicked!');
+      console.log('Target:', event.target);
+      console.log('Current Target:', event.currentTarget);
+      console.log('Event Phase:', event.eventPhase);
+  }, false); // Set the third parameter to false for bubbling (default)
+
+  // Add a click event listener to the inner box
+  let innerBox = document.getElementById('innerBox');
+  innerBox.addEventListener('click', function(event) {
+      console.log('Inner box clicked!');
+      console.log('Target:', event.target);
+      console.log('Current Target:', event.currentTarget);
+      console.log('Event Phase:', event.eventPhase);
+  }, false); // Set the third parameter to false for bubbling (default)
+  ```
+
+  #### Event Capturing Example
+
+  ```javascript
+  // Select the outer box element for capturing
+  let outerBoxCapture = document.getElementById('outerBox');
+
+  // Add a click event listener to the outer box with capturing
+  outerBoxCapture.addEventListener('click', function(event) {
+      console.log('Outer box (capture) clicked!');
+      console.log('Target:', event.target);
+      console.log('Current Target:', event.currentTarget);
+      console.log('Event Phase:', event.eventPhase);
+  }, true); // Set the third parameter to true for capturing
+
+  // Add a click event listener to the inner box with capturing
+  let innerBoxCapture = document.getElementById('innerBox');
+  innerBoxCapture.addEventListener('click', function(event) {
+      console.log('Inner box (capture) clicked!');
+      console.log('Target:', event.target);
+      console.log('Current Target:', event.currentTarget);
+      console.log('Event Phase:', event.eventPhase);
+  }, true); // Set the third parameter to true for capturing
+  ```
+  ### output
+
+      #### Event Bubbling (`false` for `addEventListener`)
+
+      When clicking on the **inner box**, the output will show the event bubbling up through its ancestors:
+
+      ```
+      Inner box clicked!
+      Target: [inner box element]
+      Current Target: [inner box element]
+      Event Phase: 3
+
+      Outer box clicked!
+      Target: [inner box element]
+      Current Target: [outer box element]
+      Event Phase: 3
+      ```
+
+      Explanation:
+      - Clicking on the inner box triggers its click event listener first (`eventPhase: 3` means it's in the bubbling phase).
+      - Then, the event bubbles up to its parent, the outer box, triggering its click event listener.
+
+      #### Event Capturing (`true` for `addEventListener`)
+
+      When clicking on the **inner box**, with capturing enabled:
+
+      ```
+      Outer box (capture) clicked!
+      Target: [inner box element]
+      Current Target: [outer box element]
+      Event Phase: 1
+
+      Inner box (capture) clicked!
+      Target: [inner box element]
+      Current Target: [inner box element]
+      Event Phase: 1
+
+      Inner box clicked!
+      Target: [inner box element]
+      Current Target: [inner box element]
+      Event Phase: 3
+
+      Outer box clicked!
+      Target: [inner box element]
+      Current Target: [outer box element]
+      Event Phase: 3
+      ```
+
+  ### Explanation
+
+  - **Event Bubbling (`false`)**: By default (`false`), event listeners are added in bubbling mode. When an event occurs (e.g., a click on the inner box), the event first triggers on the innermost element (`#innerBox`) and then bubbles up through its ancestors (`#outerBox`, `.container`, `body`, `html`) until it reaches the document root.
+    
+  - **Event Capturing (`true`)**: Setting the third parameter of `addEventListener()` to `true` enables capturing mode. In capturing mode, the event starts at the document root and travels downward through the DOM hierarchy until it reaches the target element (`#innerBox`). Then, it triggers the event on the target and bubbles back up.
+
+
+### Removing Event Listeners
+
+To remove an event listener, use the `removeEventListener()` method. This is important for preventing memory leaks and unnecessary event handling after an element is no longer needed.
+
+```javascript
+function handleClick(event) {
+    console.log('Button clicked!');
+}
+
+element.addEventListener('click', handleClick);
+
+// Later, remove the event listener
+element.removeEventListener('click', handleClick);
+```
+
+### Example about events
+
+Here's a simple example demonstrating event handling for a button click:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling Example</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // Select the button element
+        let button = document.getElementById('myButton');
+
+        // Add a click event listener
+        button.addEventListener('click', function(event) {
+            console.log('Button clicked!');
+        });
+    </script>
+</body>
+</html>
+```
+
+### 1. Mouse Events
+
+Mouse events are triggered by interactions with the mouse, such as clicks, movement, or scrolling.
+
+- **Click Event**: Occurs when a mouse button is pressed and released on an element.
+  
+  ```javascript
+  element.addEventListener('click', function(event) {
+      // Handle click event
+  });
+  ```
+
+- **Mouseover Event**: Fires when the mouse pointer enters an element.
+  
+  ```javascript
+  element.addEventListener('mouseover', function(event) {
+      // Handle mouseover event
+  });
+  ```
+
+- **Mouseout Event**: Triggers when the mouse pointer leaves an element.
+  
+  ```javascript
+  element.addEventListener('mouseout', function(event) {
+      // Handle mouseout event
+  });
+  ```
+
+### 2. Keyboard Events
+
+Keyboard events are triggered by user interaction with keyboard keys.
+
+- **Keydown Event**: Fires when a key is pressed down.
+  
+  ```javascript
+  document.addEventListener('keydown', function(event) {
+      // Handle keydown event
+  });
+  ```
+
+- **Keyup Event**: Occurs when a key is released.
+  
+  ```javascript
+  document.addEventListener('keyup', function(event) {
+      // Handle keyup event
+  });
+  ```
+
+### 3. Focus & Blur Events
+
+Focus events occur when an element gains or loses focus, typically through user interaction.
+
+- **Focus Event**: Fired when an element receives focus (e.g., when clicked or tabbed into).
+  
+  ```javascript
+  inputElement.addEventListener('focus', function(event) {
+      // Handle focus event
+  });
+  ```
+
+- **Blur Event**: Triggered when an element loses focus (e.g., when clicking outside of an input field after typing).
+  
+  ```javascript
+  inputElement.addEventListener('blur', function(event) {
+      // Handle blur event
+  });
+  ```
+
+### Adding Event Listeners
+
+Event listeners are attached to elements using the `addEventListener()` method. This method takes two parameters:
+- The event type (e.g., `'click'`, `'keydown'`, `'focus'`)
+- A callback function that executes when the event occurs
+
+#### Example Usage:
+
+```javascript
+// Example of click event listener
+let button = document.getElementById('myButton');
+button.addEventListener('click', function(event) {
+    console.log('Button clicked!');
+});
+
+// Example of keydown event listener
+document.addEventListener('keydown', function(event) {
+    console.log('Key pressed:', event.key);
+});
+
+// Example of focus event listener
+let input = document.getElementById('myInput');
+input.addEventListener('focus', function(event) {
+    console.log('Input focused!');
+});
+```
+### Fully Example
+
+Fully detailed example explain how to use event listeners for mouse events, keyboard events, and focus/blur events in JavaScript:
+
+### HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listeners Example</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Listeners Example</h2>
+        <button id="clickButton">Click Me</button>
+        <br>
+        <input type="text" id="textInput" placeholder="Type something...">
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
+```
+
+### JavaScript Event Listeners
+
+Now, let's add JavaScript code to handle different types of events:
+
+#### 1. Mouse Events
+
+```javascript
+// Select the button element
+let clickButton = document.getElementById('clickButton');
+
+// Add a click event listener
+clickButton.addEventListener('click', function(event) {
+    console.log('Button clicked!');
+});
+
+// Add mouseover event listener
+clickButton.addEventListener('mouseover', function(event) {
+    console.log('Mouse over the button');
+});
+
+// Add mouseout event listener
+clickButton.addEventListener('mouseout', function(event) {
+    console.log('Mouse out of the button');
+});
+```
+
+#### 2. Keyboard Events
+
+```javascript
+// Select the text input element
+let textInput = document.getElementById('textInput');
+
+// Add keydown event listener
+textInput.addEventListener('keydown', function(event) {
+    console.log('Key pressed:', event.key);
+});
+
+// Add keyup event listener
+textInput.addEventListener('keyup', function(event) {
+    console.log('Key released:', event.key);
+});
+```
+
+#### 3. Focus & Blur Events
+
+```javascript
+// Add focus event listener
+textInput.addEventListener('focus', function(event) {
+    console.log('Input focused');
+});
+
+// Add blur event listener
+textInput.addEventListener('blur', function(event) {
+    console.log('Input blurred');
+});
+```
+
+### Complete Example
+
+Here's how the complete JavaScript code looks when integrated into the HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listeners Example</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Listeners Example</h2>
+        <button id="clickButton">Click Me</button>
+        <br>
+        <input type="text" id="textInput" placeholder="Type something...">
+    </div>
+
+    <script>
+        // Select the button element
+        let clickButton = document.getElementById('clickButton');
+
+        // Add a click event listener
+        clickButton.addEventListener('click', function(event) {
+            console.log('Button clicked!');
+        });
+
+        // Add mouseover event listener
+        clickButton.addEventListener('mouseover', function(event) {
+            console.log('Mouse over the button');
+        });
+
+        // Add mouseout event listener
+        clickButton.addEventListener('mouseout', function(event) {
+            console.log('Mouse out of the button');
+        });
+
+        // Select the text input element
+        let textInput = document.getElementById('textInput');
+
+        // Add keydown event listener
+        textInput.addEventListener('keydown', function(event) {
+            console.log('Key pressed:', event.key);
+        });
+
+        // Add keyup event listener
+        textInput.addEventListener('keyup', function(event) {
+            console.log('Key released:', event.key);
+        });
+
+        // Add focus event listener
+        textInput.addEventListener('focus', function(event) {
+            console.log('Input focused');
+        });
+
+        // Add blur event listener
+        textInput.addEventListener('blur', function(event) {
+            console.log('Input blurred');
+        });
+    </script>
+</body>
+</html>
+```
+
+### Explanation
+
+- **Mouse Events**: The `click`, `mouseover`, and `mouseout` events are handled for the button element (`clickButton`). Each event logs a message to the console when triggered.
+  
+- **Keyboard Events**: The `keydown` and `keyup` events are handled for the text input element (`textInput`). They log the pressed/released key to the console.
+  
+- **Focus & Blur Events**: The `focus` and `blur` events are also handled for the text input. They log messages when the input gains or loses focus.
+
