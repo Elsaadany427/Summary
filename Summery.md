@@ -18,7 +18,8 @@ Notes
 
 - Its syntax comes from C, C++ & Java programming languages.
 
-### What can JavaScript do?
+
+## What can JavaScript do?
 
 1. **Manipulate HTML and CSS**
 
@@ -41,7 +42,7 @@ Notes
 4. **Multimedia**
     - **Audio and Video**: JavaScript can control audio and video playback, enabling custom controls, playlists, and interactive media experiences.
 
-### Examples of JavaScript in Action
+## Examples of JavaScript in Action
 
 1. Changing Content Dynamically:
 
@@ -130,24 +131,25 @@ In JavaScript, dealing with the console primarily involves using the console obj
         ```javascript
         console.clear();
         ```
-### Comparison of `console.log`, `console.warn`, and `console.error`
-1. **Intended Use**:
-   - `console.log`: For general purpose logging.
-   - `console.warn`: For logging warnings and potential issues.
-   - `console.error`: For logging errors and exceptions.
+#### Comparison of `console.log`, `console.warn`, and `console.error`
+  1. **Intended Use**:
+    - `console.log`: For general purpose logging.
+    - `console.warn`: For logging warnings and potential issues.
+    - `console.error`: For logging errors and exceptions.
 
-2. **Output Format**:
-   - `console.log`: Standard text format.
-   - `console.warn`: Typically highlighted in yellow to indicate a warning.
-   - `console.error`: Typically highlighted in red to indicate an error.
+  2. **Output Format**:
+    - `console.log`: Standard text format.
+    - `console.warn`: Typically highlighted in yellow to indicate a warning.
+    - `console.error`: Typically highlighted in red to indicate an error.
 
-3. **Browser Behavior**:
-   - `console.log`: Displays standard logs without special formatting.
-   - `console.warn`: Displays warnings with a distinct color and may include additional information like stack traces.
-   - `console.error`: Displays errors with a distinct color and usually includes stack traces or links to the source code causing the error.
+  3. **Browser Behavior**:
+    - `console.log`: Displays standard logs without special formatting.
+    - `console.warn`: Displays warnings with a distinct color and may include additional information like stack traces.
+    - `console.error`: Displays errors with a distinct color and usually includes stack traces or links to the source code causing the error.
 
+---
+## JavaScript syntax refers to the set of rules that define the structure and composition of valid JavaScript code. Here are the key elements of JavaScript syntax:
 
-### JavaScript syntax refers to the set of rules that define the structure and composition of valid JavaScript code. Here are the key elements of JavaScript syntax:
 ## Syntax
 
 ### 1. Data Types
@@ -377,7 +379,6 @@ arr.push(4); // Allowed
 console.log(arr); // [1, 2, 3, 4]
 ```
 
-
 In JavaScript, the `const` keyword is used to declare variables that are meant to be constant. This means that the binding of the variable to the value cannot be changed. However, if the value is an object or an array, the contents of that object or array can still be modified. This is because `const` ensures that the reference to the object or array cannot be changed, but it does not make the object or array itself immutable.
 
 ### Explanation
@@ -500,6 +501,7 @@ number (+, *, /, -) array = number  (+, *, /, -) Number([].toString())
 4 * [] => 0
 4 + [1] => 41
 4 + [1,2,3] => 41,2,3
+4 * [1,2,3] => NAN
 ```
 
 #### Non-numeric values in numeric expressions
@@ -2413,5 +2415,3 @@ sessionStorage.clear();
 - **Cookies**: Session management, user authentication, tracking, storing small amounts of data that need to be sent to the server.
 - **Local Storage**: Saving user preferences, themes, form data, small-scale application data.
 - **Session Storage**: Temporary data storage for a single session or tab, form data recovery.
-- **IndexedDB**: Large-scale data storage, offline applications, complex data storage requirements.
-
