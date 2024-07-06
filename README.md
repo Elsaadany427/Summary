@@ -88,8 +88,8 @@ function move() {
 - [Variables](Variables/README.md)
 - [Type Conversation](Type%20Conversation/README.md)
 - [Operators](Operators/README.md)
-- [Control Structures](Control%20Structures)
-- [Objects and Array](Objects%20and%20Array)
+- [Control Structures](Control%20Structures/README.md)
+- [Objects and Array](Objects%20and%20Array/README.md)
 
 ## Introduction to DOM 
 - [Introduction to DOM](DOM/README.md)
