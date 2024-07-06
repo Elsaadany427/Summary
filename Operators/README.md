@@ -1,4 +1,4 @@
-[Back To Main README](../README.md)
+[Back To Main README](../README.md#table-of-contents)
 
 # 4. Operators
 JavaScript includes several types of operators:

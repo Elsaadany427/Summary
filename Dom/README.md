@@ -1,4 +1,4 @@
-[Back To Main README](../README.md)
+[Back To Main README](../README.md#table-of-contents)
 
 # Introduction to DOM
 The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, making it possible to manipulate the content, structure, and style of web pages programmatically.

@@ -1,4 +1,4 @@
-[Back To Main README](../../README.md)
+[Back To Main README](../../README.md#table-of-contents)
 
 # 3. How to add in CSS in JS
 To add CSS styles dynamically in JavaScript, you have a few different approaches depending on your requirements and preferences. Here are the common methods:

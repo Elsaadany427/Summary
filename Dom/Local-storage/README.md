@@ -1,4 +1,4 @@
-[Back To Main README](../../README.md)
+[Back To Main README](../../README.md#table-of-contents)
 
 # 6. Local storage
 Local storage in web development refers to several different methods for storing data locally within the user's browser. These include:

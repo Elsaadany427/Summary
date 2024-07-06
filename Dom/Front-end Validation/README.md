@@ -1,4 +1,4 @@
-[Back To Main README](../../README.md)
+[Back To Main README](../../README.md#table-of-contents)
 
 # 5. Front-end form validation
 Front-end form validation is the process of ensuring that user input in a web form is complete, accurate, and conforms to expected formats before it is submitted to the server.

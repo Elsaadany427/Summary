@@ -1,4 +1,4 @@
-[Back To Main README](../README.md)
+[Back To Main README](../README.md#table-of-contents)
 
 # 5. Objects and Arrays
 Objects and arrays are used to store collections of data.

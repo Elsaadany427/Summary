@@ -1,4 +1,4 @@
-[Back To Main README](../README.md)
+[Back To Main README](../README.md#table-of-contents)
 
 # 1. Data Types
 JavaScript supports several data types, including:

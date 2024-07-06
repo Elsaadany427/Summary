@@ -1,4 +1,4 @@
-[Back To Main README](../README.md)
+[Back To Main README](../README.md#table-of-contents#table-of-contents)
 # 2. Variables
 Variables store data values. You can declare variables using `var`, `let`, or `const`.
 

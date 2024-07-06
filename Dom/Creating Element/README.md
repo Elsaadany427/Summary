@@ -1,4 +1,4 @@
-[Back To Main README](../../README.md)
+[Back To Main README](../../README.md#table-of-contents)
 
 # 2. Create and Add Element in DOM
 Creating and adding elements to the DOM dynamically is a common task in web development, often used to update the interface or respond to user actions. There are several methods and best practices for accomplishing this:
