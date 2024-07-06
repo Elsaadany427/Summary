@@ -4,6 +4,16 @@
 
 Event handling in web development refers to the process of writing code that responds to events triggered by user interactions or actions in the browser. Events can be various actions such as clicks, key presses, mouse movements, form submissions, and more. Here’s a detailed explanation covering all aspects of event handling in JavaScript:
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 ## Basics of Event Handling
 
 1. **Event**: An event is an action or occurrence that happens in the browser that your JavaScript code can respond to. Examples include clicking a button, pressing a key, submitting a form, etc.

@@ -3,6 +3,16 @@
 # 5. Objects and Arrays
 Objects and arrays are used to store collections of data.
 
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
+
 ```javascript
 let person = {
   name: "Alice",

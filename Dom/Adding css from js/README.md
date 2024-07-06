@@ -3,6 +3,17 @@
 # 3. How to add in CSS in JS
 To add CSS styles dynamically in JavaScript, you have a few different approaches depending on your requirements and preferences. Here are the common methods:
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
+
 ## 1. Inline Styles
 
 You can directly manipulate the `style` attribute of an element to apply CSS styles. This method is straightforward but can become cumbersome for complex styles.

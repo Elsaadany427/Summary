@@ -2,6 +2,17 @@
 
 #  3. Type Conversation
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
+
 ## JavaScript Implicit and Explicit Coercion
 
 JavaScript Implicit Coercion refers to JavaScript attempting to coerce an unexpected value type to an expected value type. So you can pass a string where it's expected a number and it will try to convert it to the right type.

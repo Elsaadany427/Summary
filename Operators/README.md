@@ -3,6 +3,16 @@
 # 4. Operators
 JavaScript includes several types of operators:
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 - **Arithmetic Operators**: `+`, `-`, `*`, `/`, `%`
 - **Assignment Operators**: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
 - **Comparison Operators**: `==`, `!=`, `===`, `!==`, `>`, `<`, `>=`, `<=`

@@ -3,6 +3,16 @@
 # 2. Create and Add Element in DOM
 Creating and adding elements to the DOM dynamically is a common task in web development, often used to update the interface or respond to user actions. There are several methods and best practices for accomplishing this:
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 ## Creating Elements
 
 You can create new elements in the DOM using the `document.createElement()` method. This method takes the tag name of the element you want to create as an argument.

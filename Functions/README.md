@@ -2,6 +2,16 @@
 
 # 6. Functions
 
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
+
 1. **Basic Function**
    - A basic function is defined using the `function` keyword and can be called by its name.
    

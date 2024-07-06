@@ -2,6 +2,17 @@
 # 2. Variables
 Variables store data values. You can declare variables using `var`, `let`, or `const`.
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
+
 - **`var`**: Function-scoped or globally-scoped variable.
 - **`let`**: Block-scoped variable.
 - **`const`**: Block-scoped constant, which cannot be reassigned.

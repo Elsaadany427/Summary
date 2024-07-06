@@ -2,6 +2,17 @@
 
 # 5. Control Structures
 
+
+## Resources
+
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 ## Conditionals
 Control the flow of the code using conditionals like `if`, `else if`, `else`, and `switch`.
 

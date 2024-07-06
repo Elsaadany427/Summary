@@ -4,6 +4,16 @@
 
 JavaScript provides several methods to select elements in the DOM. Here are the most commonly used ones:
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 ## 1. `getElementById`
 
 This method selects an element by its `id` attribute.

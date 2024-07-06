@@ -3,6 +3,15 @@
 # 1. Dealing with Console.
 In JavaScript, dealing with the console primarily involves using the console object, which provides access to the browser's debugging console. Here are some common methods and uses of the console:
 
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 ## Common Console Methods
 1. `console.log()`
     - **Purpose**: Logs information to the console.

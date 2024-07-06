@@ -3,6 +3,16 @@
 # 6. Local storage
 Local storage in web development refers to several different methods for storing data locally within the user's browser. These include:
 
+
+## Resources
+- ### Reference
+
+- ### Articles
+ 
+- ### Videos
+ 
+## Content 
+
 1. **Cookies**
 2. **Local Storage**
 3. **Session Storage**
