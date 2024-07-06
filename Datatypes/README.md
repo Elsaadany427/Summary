@@ -12,7 +12,8 @@ JavaScript supports several data types, including:
   - [Explaining Value vs. Reference in Javascript](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
   - [Javascript variables (Beginner thinking)](https://robiul.dev/javascript-variables-beginner-thinking)
 - ### Videos
-  - [JavaScript Reference vs Primitive Types — Academind](https://www.youtube.com/watch?v=9ooYYRLdg_g)  
+  - [JavaScript Reference vs Primitive Types — Academind](https://www.youtube.com/watch?v=9ooYYRLdg_g)
+  - [JavaScript Value vs Reference Types](https://www.youtube.com/watch?v=fD0t_DKREbE)
 
 ## Content 
 
