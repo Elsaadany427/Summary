@@ -1,27 +1,4 @@
-<!-- Adding embedded HTML for CSS styling -->
-<style>
-    h1, h2, h3 {
-        color: #2c3e50;
-        font-family: Arial, sans-serif;
-        border-bottom: 2px solid #ecf0f1;
-        padding-bottom: 5px;
-    }
-    ul {
-        
-        padding-left: 0;
-    }
-    li {
-        margin: 10px 0;
-    }
-    a {
-        text-decoration: none !important;
-        color: #3498db !important;
-        font-family: Arial, sans-serif;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-</style>
+[Back To Main README](../README.md)
 
 # Introduction to DOM
 The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, making it possible to manipulate the content, structure, and style of web pages programmatically.

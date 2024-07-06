@@ -1,3 +1,5 @@
+[Back To Main README](../README.md)
+
 # 6. Functions
 
 1. **Basic Function**
