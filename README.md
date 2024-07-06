@@ -92,4 +92,4 @@ function move() {
 - [Objects and Array](Objects%20and%20Array/README.md)
 
 ## Introduction to DOM 
-- [Introduction to DOM](DOM/README.md)
+- [Introduction to DOM](Dom/README.md)
