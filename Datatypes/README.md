@@ -9,9 +9,11 @@ JavaScript supports several data types, including:
   - [JavaScript data types and data structures — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values)
 - ### Articles
   - [Primitive and Non-primitive data-types in JavaScript - GeeksforGeeks](https://www.geeksforgeeks.org/primitive-and-non-primitive-data-types-in-javascript/)
+  - [Explaining Value vs. Reference in Javascript](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
   - [Javascript variables (Beginner thinking)](https://robiul.dev/javascript-variables-beginner-thinking)
 - ### Videos
-  - [JavaScript Reference vs Primitive Types — Academind](https://www.youtube.com/watch?v=9ooYYRLdg_g)  
+  - [JavaScript Reference vs Primitive Types — Academind](https://www.youtube.com/watch?v=9ooYYRLdg_g)
+  - [JavaScript Value vs Reference Types](https://www.youtube.com/watch?v=fD0t_DKREbE)
 
 ## Content 
 

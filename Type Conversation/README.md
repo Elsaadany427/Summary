@@ -7,7 +7,9 @@
 - ### Reference
 
 - ### Articles
- 
+  - [JavaScript Double Equals vs. Triple Equals — Brandon Morelli](https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a) 
+  - [Should I use === or == equality comparison operator in JavaScript? — Panu Pitkamaki](https://bytearcher.com/articles/equality-comparison-operator-javascript/)
+  - [Javascript Coercion Explained](https://hackernoon.com/javascript-coercion-explained-545c895213d3)
 - ### Videos
  
 ## Content 
