@@ -186,3 +186,106 @@ xhr.send();
 </html>
 ```
 
+
+### with post
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest POST Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .user, .response {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .user h2, .response h2 {
+            margin: 0;
+        }
+        .user p, .response p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>XMLHttpRequest POST Example</h1>
+    <form id="user-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="user-list"></div>
+
+    <script>
+        var postedUsers = []; // Array to store posted users
+
+        // Function to post new user data
+        function postUserData(name, email) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://jsonplaceholder.typicode.com/users', true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    var response = JSON.parse(xhr.responseText);
+                    // displayResponse(response);
+                    postedUsers.push(response); // Add posted user to the array
+                    displayPostedUsers();
+                } else {
+                    console.error('HTTP Error:', xhr.status, xhr.statusText);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error('Network Error');
+            };
+
+            var data = JSON.stringify({ name: name, email: email });
+            xhr.send(data);
+        }
+
+        // Function to display posted users
+        function displayPostedUsers() {
+            var userList = document.getElementById('user-list');
+            userList.innerHTML = ''; // Clear existing content
+
+            postedUsers.forEach(function(user) {
+                var userDiv = document.createElement('div');
+                userDiv.className = 'user';
+                userDiv.innerHTML = `
+                    <h2>${user.name}</h2>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Phone:</strong> ${user.phone}</p>
+                    <p><strong>Company:</strong> ${user.company?.name || 'N/A'}</p>
+                `;
+                userList.appendChild(userDiv);
+            });
+        }
+
+        // Add event listener to the form to post user data when submitted
+        document.getElementById('user-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            postUserData(name, email);
+            document.getElementById('user-form').reset(); // Reset the form after submission
+        });
+
+    </script>
+</body>
+</html>
+
+```
