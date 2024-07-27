@@ -91,6 +91,7 @@ function move() {
 - [Control Structures](Control%20Structures/README.md)
 - [Objects and Array](Objects%20and%20Array/README.md)
 - [Functions](Functions/README.md)
+- [ES6](ES6/README.md)
 
 ## Introduction to DOM 
 - [Introduction to DOM](Dom/README.md)

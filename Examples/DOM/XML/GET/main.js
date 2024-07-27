@@ -1,10 +1,13 @@
 // Function to make an XMLHttpRequest to get user data
 function fetchUserData() {
   var xhr = new XMLHttpRequest();
+  
   xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
 
   xhr.onload = function () {
+    console.log(xhr)
     if (xhr.status >= 200 && xhr.status < 300) {
+
       var data = JSON.parse(xhr.responseText);
       displayUserData(data);
     } else {
