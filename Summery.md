@@ -1,4 +1,5 @@
-## What is CSS and its Syntax?
+# CSS
+- What is CSS and its Syntax?
 - 3 Ways t o Insert CSS.
 - CSS Selectors.
 - How to Deal with texts
