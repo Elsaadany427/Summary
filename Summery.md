@@ -17,3 +17,7 @@
     1. Height
     2. Max and Min Height
     3. Width , Max and Min Width
+- Display
+    1. Float & clear
+    2. Flex-box
+    3. Grid
