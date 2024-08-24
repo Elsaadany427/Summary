@@ -20,6 +20,7 @@
     3. Width , Max and Min Width
 - Display
     1. Float & clear
+    2. Flex-box
 - CSS Comments
 - Dealing with Background
     - Background color
