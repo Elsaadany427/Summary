@@ -21,6 +21,7 @@
 - Display
     1. Float & clear
     2. Flex-box
+    3. Grid
 - CSS Comments
 - Dealing with Background
     - Background color
