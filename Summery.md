@@ -43,3 +43,23 @@ css-studies/
 │── dealing-with-background.md
 │── css-units.md
 ```
+
+```
+javascript-studies/
+│
+├── README.md
+│
+├── basics/
+│   ├── dealing-with-console.md
+│   ├── datatypes.md
+│   ├── variables.md
+│   ├── type-conversation.md
+│   ├── operators.md
+│   ├── control-structures.md
+│   ├── objects-and-array.md
+│   ├── functions.md
+│   ├── es6.md
+│
+└── dom/
+    ├── introduction-to-dom.md
+```
