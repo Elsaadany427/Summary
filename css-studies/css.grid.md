@@ -394,3 +394,135 @@ Gutters or alleys between grid cells can be created using the column-gap and row
 
 </html>
 ```
+
+### Read about grid-template-areas
+
+### Grid Column
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            background-color: #eee;
+            width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px 10px;
+            /* Inspect and add this to the element */
+     	}
+        .first{
+            /* take 3 columns from 1 to 3 */
+            grid-column: 1 / 4
+            /* take 3 columns from 1 to 4 */
+            grid-column: 1 / 5
+            /* take 3 columns from 1 to 3 */
+            grid-column: span 3;
+            /* take 3 columns from 2 to 4 */
+            grid-column: 2 / span 3;
+
+        }
+
+        .wrapper div {
+            background: red;
+            padding: 20px;
+      		border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="first">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+       	<div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+       	<div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+
+</html>
+```
+
+
+### Grid Row
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            background-color: #eee;
+            width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px 10px;
+            /* Inspect and add this to the element */
+     	}
+        .first{
+            /* take 2 rows from 1 to 3 */
+            grid-row: 1 / 3
+            /* take 3 rows from 1 to 3 */
+            grid-row: span 3;
+        }
+
+        .wrapper div {
+            background: red;
+            padding: 20px;
+      		border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="first">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+       	<div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+       	<div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+
+</html>
+```
