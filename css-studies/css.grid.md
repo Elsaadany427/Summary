@@ -18,7 +18,7 @@ We create a grid container by declaring display: grid or display: inline-grid on
     <style>
         .wrapper {
             display: grid;
-            background-color: #fff;
+            background-color: #eee;
             width: 800px;
             height: 500px;
             margin: 20px auto;
@@ -62,7 +62,7 @@ I can add to our earlier example by adding the grid-template-columns property, t
     <style>
         .wrapper {
             display: grid;
-            background-color: #fff;
+            background-color: #eee;
             width: 800px;
             height: 500px;
             margin: 20px auto;
@@ -103,7 +103,7 @@ I can add to our earlier example by adding the grid-template-columns property, t
     <style>
         .wrapper {
             display: grid;
-            background-color: #fff;
+            background-color: #eee;
             width: 800px;
             height: 500px;
             margin: 20px auto;
@@ -158,7 +158,7 @@ I can add to our earlier example by adding the grid-template-rows property, then
     <style>
         .wrapper {
             display: grid;
-            background-color: #fff;
+            background-color: #eee;
             width: 800px;
             height: 500px;
             margin: 20px auto;
@@ -262,7 +262,7 @@ Gutters or alleys between grid cells can be created using the column-gap and row
     <style>
         .wrapper {
             display: grid;
-            background-color: #fff;
+            background-color: #eee;
             width: 800px;
             height: 500px;
             margin: 20px auto;
@@ -273,6 +273,106 @@ Gutters or alleys between grid cells can be created using the column-gap and row
             /* or shorthand */
             /* gap: 10px; */
         }
+
+        .wrapper div {
+            background: red;
+            padding: 20px;
+      		border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+    </div>
+</body>
+
+</html>
+```
+
+### Justify Content And Align Content
+
+#### Justify Content
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            background-color: #eee;
+            width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 200px 200px 200px;
+            row-gap: 20px;
+            column-gap: 1%;
+            /* or shorthand */
+            /* gap: 10px; */
+            justify-content: flex-end;
+            /* justify-content: flex-start; */
+            /* justify-content: space-between; */
+            align-content: flex-start;
+        }
+
+        .wrapper div {
+            background: red;
+            padding: 20px;
+      		border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+    </div>
+</body>
+
+</html>
+```
+
+#### Another example with auto
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .wrapper {
+             display: grid;
+            background-color: #eee;
+            width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            row-gap: 20px;
+            column-gap: 1%;
+            /* or shorthand */
+            /* gap: 10px; */
+            justify-content: flex-start;
+            align-content: flex-start;
+     	}
 
         .wrapper div {
             background: red;
