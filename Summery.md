@@ -1,31 +1,45 @@
-# CSS
-- What is CSS and its Syntax?
-- 3 Ways t o Insert CSS.
-- CSS Selectors.
-- How to Deal with texts
-    1. Text Color
-    2. Text Al ignme nt
-    3. Text Decoration
-    4. Text Transform
-    5. Font Style
-    6. Font Size
-- Box Model
-    1. Margin
-    2. Padding
-    3. Border
-    4. Box-sizing
-- Width and Height
-    1. Height
-    2. Max and Min Height
-    3. Width , Max and Min Width
-- Display
-    1. Float & clear
-    2. Flex-box
-    3. Grid
-- CSS Comments
-- Dealing with Background
-    - Background color
-    - Background image, background position and reapeat
-    - Background attachment
-- CSS Measurement Units
-    - px
+### Repository Structure
+
+```
+html-studies/
+│
+├── README.md
+│
+├── html5/
+│   ├── README.md
+│   ├── syntax-and-structure.md
+│   ├── headings-and-paragraphs.md
+│   ├── text-formatting.md
+│   ├── comments.md
+│   ├── lists.md
+│   ├── attributes.md
+│   ├── images.md
+│   ├── links.md
+│   ├── div-and-span.md
+│   ├── forms.md
+│   ├── html-and-css.md
+│   ├── new-and-removed-tags.md
+│   └── templates.md
+│
+└── examples/
+    ├── example1.html
+    ├── example2.html
+    └── example3.html
+```
+
+
+```
+css-studies/
+├── Summary.md
+│── css-syntax.md
+│── css-insertion.md
+│── css-selectors.md
+│── deal-with-text.md
+│── css-box-modeling.md
+│── css-width-and-height.md
+│── css-flex-box.md
+│── css.grid.md
+│── Float-clear.md
+│── dealing-with-background.md
+│── css-units.md
+```
