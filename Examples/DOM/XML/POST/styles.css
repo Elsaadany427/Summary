@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.user,
+.response {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.user h2,
+.response h2 {
+    margin: 0;
+}
+
+.user p,
+.response p {
+    margin: 5px 0;
+}

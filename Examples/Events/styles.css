@@ -1,0 +1,6 @@
+ /* CSS to style the paragraph initially */
+ p {
+    color: black; /* Initial color */
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
