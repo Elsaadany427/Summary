@@ -42,6 +42,10 @@ css-studies/
 │── Float-clear.md
 │── dealing-with-background.md
 │── css-units.md
+│── css-var.md
+│── css-calc.md
+│── css-transformAndTransition.md
+│── css-animations.md
 ```
 
 ```
