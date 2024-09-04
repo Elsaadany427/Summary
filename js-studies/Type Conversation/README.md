@@ -192,4 +192,64 @@ Undefined === Null => False
 isNaN works in that way if(Number(value)) return true else return false
 ```
 
+```html
+<!-- More Examples -->
 
+// number (+ - / *) string
+
+// number (- / *) string
+// number (- / *) string to number
+// number (+) string
+
+// 3 * Number("3")
+// 3 * 3 = 9
+
+// 3 / Number("3")
+// 3 / 3 = 1
+
+// 3 - Number("3")
+// 3 - 3 = 0
+
+// 3 - Number("hatem")
+// 3 - NaN = NaN
+
+// 3 - Number("1+2")
+// 3 - NaN = NaN
+
+// 31+2
+// 51+2
+// 51+2+4
+// 51+24
+// 51+222
+// 5+"1+2" + 2 + 2
+// 5+"1+2" + 2 + 2
+// "51+222"
+
+
+// number (+ - / *) array
+// Number (- / *) convert arr to string then to Number
+// Number (+) convert arr to string
+
+// "1,2,3"
+// "41,2,3"
+console.log(4 + [1, 2, 3])
+// "41"
+console.log(4 + [1])
+// "4"
+console.log(4 + [])
+
+// 4 * "2"
+// 4 * Number("2")
+// 4 * 2 = 8
+console.log(4 *[2])
+
+// 4 * "1,2"
+// 4 * Number("1,2")
+// 4 * NaN = NaN
+console.log(4 * [1,2])
+
+// 4 * ""
+// 4 * Number("")
+// 4 * 0 = 0
+console.log(4 * [])
+```
