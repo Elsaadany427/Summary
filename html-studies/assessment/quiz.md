@@ -1,3 +1,5 @@
+# HTML and Web Development Quiz
+
 ### 1. Syntax and Structure
 1. **Multiple Choice:**  
    What is the correct syntax for an HTML document?  
@@ -38,6 +40,12 @@
 
 4. **Short Answer:**  
    What is the difference between `<h1>` and `<h2>` tags?
+
+
+<br>
+<br>
+<br>
+
 
 5. **Multiple Choice:**  
    Which tag is used to create a line break in HTML?  
@@ -111,6 +119,7 @@
 4. **Short Answer:**  
    What is the purpose of the `type` attribute in an ordered list?
 
+
 5. **Multiple Choice:**  
    Which of the following is the correct structure for a nested list?  
    - A) `<ul><li>Item 1</li><ol><li>Sub-item</li></ol></ul>`  
@@ -126,6 +135,11 @@
    - C) `<div>`  
    - D) `<h1>`  
 
+
+<br>
+<br>
+<br>
+
 2. **True or False:**  
    Every HTML element can have attributes.
 
@@ -134,6 +148,7 @@
 
 4. **Short Answer:**  
    What is the purpose of the `alt` attribute in an image tag?
+
 
 5. **Multiple Choice:**  
    Which tag uses the `href` attribute?  
@@ -165,6 +180,13 @@
    - B) PNG  
    - C) GIF  
    - D) DOC  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### 8. Links
 1. **Multiple Choice:**  
@@ -206,6 +228,13 @@
 
 4. **Short Answer:**  
    What is a common use case for the `<div>` element?
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 5. **Multiple Choice:**  
    Which statement about `<div>` and `<span>` is TRUE?  
