@@ -38,52 +38,6 @@ To handle this structure effectively, here's how we can organize the content wit
 └── exercise.md          (Exercise file with tasks for the user to complete)
 ```
 
-### **Main Files Content**
-
-1. **`README.md` (Main Repository File)**
-
-```markdown
-# HTML Studies Repository
-
-Welcome to the HTML Studies Repository. This repository contains comprehensive notes and examples for various HTML topics.
-
-## Structure
-
-- `html5/`: Detailed notes and examples on different HTML5 topics.
-- `examples/`: Sample HTML files demonstrating various HTML concepts.
-
-## Topics Covered
-
-1. [**Syntax and Structure**](01_Syntax_and_Structure/README.md)
-2. [**Headings and Paragraphs**](02_Headings_and_Paragraphs/)
-3. [**Text Formatting**](03_Text_Formatting/)
-4. [**Lists**](04_Lists/)
-5. [**Attributes**](05_Attributes/)
-6. [**Images**](06_Images/)
-7. [**Links**](07_Links/)
-8. [**Div and Span Elements**](08_Div_and_Span/)
-9. [**Forms**](09_Forms/)
-10. [**HTML and CSS Integration**](10_HTML_CSS_Integration/)
-11. [**New and Removed Tags**](11_New_and_Removed_Tags/)
-12. [**HTML Templates**](12_HTML_Templates/)
-13. [**Semantics**](13_Semantics/)
-14. [**Tables**](14_Tables/)
-15. [**Audio and Video**](15_Audio_and_Video/)
-
-## How to Use
-
-- Browse through the `html5/` directory for detailed notes and examples.
-- Check the `examples/` directory for practical HTML files demonstrating the concepts.
-- Feel free to contribute by adding more examples or clarifying notes.
-```
-
-2. **Each Topic Folder (e.g., `01_Syntax_and_Structure/`)**
-
-Each topic will have a **`README.md`**, **`example.html`**, and **`exercise.md`**.
-
----
-
-#### **Example: 01_Syntax_and_Structure/**
 
 **README.md**
 
