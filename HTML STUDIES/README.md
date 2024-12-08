@@ -5,7 +5,7 @@ To handle this structure effectively, here's how we can organize the content wit
 ### **HTML Studies Repository Structure**
 
 - **README.md** (Main file containing repository overview)
-- **html5/**: Detailed notes on HTML5 concepts, one folder per topic.
+- **HTML5/**: Detailed notes on HTML5 concepts, one folder per topic.
   - `01_Syntax_and_Structure/`: Contains basic HTML structure notes and examples.
   - `02_Headings_and_Paragraphs/`: Contains notes and examples on headings and paragraphs.
   - `03_Text_Formatting/`: Covers text formatting tags and styles.
@@ -21,11 +21,10 @@ To handle this structure effectively, here's how we can organize the content wit
   - `14_semantics.md`: Explains semantic tags like `<article>`, `<section>`, etc.
   - `15_tables.md`: Covers how to create and structure tables in HTML.
   - `16_audio_and_video.md`: Discusses embedding audio and video files.
-  - `17_meta_tags.md`: Introduces meta tags and their uses in the `<head>` section.
-  - `18_accessibility.md`: Discusses web accessibility best practices.
 
-- **examples/**: This folder will contain HTML example files for each topic.
-  - `example.html` (For each topic folder) will demonstrate the practical usage of the respective concepts.
+- **Cheatsheets/**: Quick reference guides for HTML tags, attributes, and syntax.
+- **Projects/**: Hands-on projects to practice HTML skills.
+- **Assessments/**: Quizzes and assessments to test your knowledge of HTML concepts.
 
 ---
 
