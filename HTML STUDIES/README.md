@@ -6,21 +6,22 @@ To handle this structure effectively, here's how we can organize the content wit
 
 - **README.md** (Main file containing repository overview)
 - **HTML5/**: Detailed notes on HTML5 concepts, one folder per topic.
-  - `01_Syntax_and_Structure/`: Contains basic HTML structure notes and examples.
-  - `02_Headings_and_Paragraphs/`: Contains notes and examples on headings and paragraphs.
-  - `03_Text_Formatting/`: Covers text formatting tags and styles.
-  - `04_Lists/`: Discusses different types of lists in HTML (ordered, unordered, description).
-  - `05_Attributes/`: Explains HTML attributes and their usage.
-  - `06_Images/`: Details on embedding and controlling images in HTML.
-  - `07_Links/`: Covers the creation and attributes of hyperlinks.
-  - `08_Div_and_Span/`: Discusses `<div>` and `<span>` elements for layout.
-  - `09_Forms/`: Covers forms, input fields, and form handling.
-  - `10_HTML_CSS_Integration/`: Demonstrates how HTML and CSS work together.
-  - `11_New_and_Removed_Tags/`: Discusses new tags in HTML5 and deprecated ones.
-  - `12_HTML_Templates/`: Explains how to use HTML templates for reusability.
-  - `14_semantics.md`: Explains semantic tags like `<article>`, `<section>`, etc.
-  - `15_tables.md`: Covers how to create and structure tables in HTML.
-  - `16_audio_and_video.md`: Discusses embedding audio and video files.
+- `01_Syntax_and_Structure/`: Contains basic HTML structure notes and examples.
+- `02_Headings_and_Paragraphs/`: Covers headings, paragraphs, and their usage.
+- `03_Text_Formatting/`: Explores text formatting tags like `<b>`, `<i>`, and other styling elements.
+- `04_Lists/`: Discusses creating ordered, unordered, and description lists.
+- `05_Attributes/`: Explains various HTML attributes and how to use them.
+- `06_Images/`: Details how to embed and control images in HTML using `<img>`.
+- `07_Links/`: Covers hyperlink creation and link attributes.
+- `08_Div_and_Span/`: Discusses using `<div>` and `<span>` for layout purposes.
+- `09_Forms/`: Explains forms, input fields, and handling user input.
+- `10_HTML_CSS_Integration/`: Shows how to integrate HTML with CSS for styling.
+- `11_New_and_Removed_Tags/`: Discusses new tags in HTML5 and deprecated tags.
+- `12_HTML_Templates/`: Explains the usage of HTML templates for reusability.
+- `13_Semantics/`: Explains semantic tags like `<article>`, `<section>`, and their usage for better web structure.
+- `14_Tables/`: Covers how to structure and design tables in HTML using `<table>`.
+- `15_Audio_and_Video/`: Explains how to embed and control audio and video files in HTML using `<audio>` and `<video>`.
+
 
 - **Cheatsheets/**: Quick reference guides for HTML tags, attributes, and syntax.
 - **Projects/**: Hands-on projects to practice HTML skills.
